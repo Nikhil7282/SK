@@ -1,27 +1,27 @@
+import Reveal from "../components/Reveal";
+
 export default function SecondPage() {
   return (
-    <div className="justify-between pl-20 bg-zinc-900 max-md:pl-5">
-      <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-        <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-          <div className="flex flex-col self-stretch my-auto text-2xl tracking-tighter max-w-[816px] max-md:mt-10 max-md:max-w-full">
-            <div className="text-7xl font-black tracking-tighter text-zinc-100 max-md:max-w-full max-md:text-4xl">
-              Building Dreams, One Project at a Time
-            </div>
-            <div className="mt-6 text-white max-md:max-w-full">
-              Experience the excellence of our construction company, trusted by
-              clients worldwide.
-            </div>
-            <div className="justify-center self-start p-6 mt-16 font-bold text-center bg-white rounded-xl text-stone-950 max-md:px-5 max-md:mt-10">
-              Learn More
-            </div>
+    <div className="w-full h-screen  bg-zinc-900 flex flex-col md:flex-row gap-4 p-4">
+      <div className="flex-1 bg-zinc-800 p-4 text-white text-center">
+        <Reveal>
+          <div className="text-4xl md:text-7xl font-black tracking-tighter text-zinc-100 max-w-full">
+            Building Dreams, One Project at a Time{" "}
           </div>
-        </div>
-        <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-          <div className="grow justify-center items-center px-16 pb-20 w-full text-3xl font-black tracking-tighter text-center text-white bg-white bg-opacity-10 pt-[468px] max-md:px-5 max-md:pt-10 max-md:mt-10 max-md:max-w-full">
-            ILLUSTRATION ACTIVE PART
+        </Reveal>
+        <Reveal>
+          <div className="mt-6 text-white max-w-full">
+            Experience the excellence of our construction company, trusted by
+            clients worldwide.{" "}
           </div>
-        </div>
+        </Reveal>
+        <Reveal>
+          <div className="self-start p-5 md:p-6 mt-10 lg:mt-16 font-bold text-center bg-white rounded-xl text-stone-950">
+            Learn More
+          </div>
+        </Reveal>
       </div>
+      <div className="flex-1 bg-zinc-500 p-4 text-white text-center">Div 2</div>
     </div>
   );
 }
