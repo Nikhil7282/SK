@@ -3,9 +3,10 @@ import { useEffect, useRef } from "react";
 
 type Props = {
   children: JSX.Element;
+  width?: "fit-content" | "100%";
 };
 
-function Reveal({ children }: Props) {
+function Reveal({ children, width = "fit-content" }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
 
@@ -20,7 +21,11 @@ function Reveal({ children }: Props) {
   }, [isInView, mainControls, slideControls]);
 
   return (
-    <div ref={ref} className="relative overflow-hidden">
+    <div
+      ref={ref}
+      className="relative overflow-hidden"
+      style={{ position: "relative", width }}
+    >
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 75 },
