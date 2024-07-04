@@ -5,15 +5,16 @@ import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
 import SecondPage from "./pages/SecondPage";
 import TeamPage from "./pages/TeamPage";
+import ContactPage from "./pages/ContactPage";
 
 // import ServicesPage from "./pages/Services";
-// import ContactPage from "./pages/ContactPage";
 // import ProjectsPage from "./pages/ProjectsPage";
 // import ClientsPage from "./pages/ClientsPage";
 
 function App() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const teamRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -32,14 +33,16 @@ function App() {
 
   return (
     <>
-      {isVisible && <Navbar isVisible={isVisible} ref={teamRef} />}
+      {isVisible && (
+        <Navbar isVisible={isVisible} ref={teamRef} contactRef={contactRef} />
+      )}
       <HomePage />
       <SecondPage />
-      {/* <ServicesPage />
-      <ContactPage /> */}
+      {/* <ServicesPage /> */}
       {/* <ProjectsPage />
       <ClientsPage /> */}
       <TeamPage ref={teamRef} />
+      <ContactPage ref={contactRef} />
     </>
   );
 }
