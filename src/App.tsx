@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 import HomePage from "./pages/HomePage";
@@ -7,10 +6,9 @@ import SecondPage from "./pages/SecondPage";
 import TeamPage from "./pages/TeamPage";
 import ContactPage from "./pages/ContactPage";
 import Parallax from "./components/Parallax";
+import Footer from "./components/Footer";
 
-// import ServicesPage from "./pages/Services";
-// import ProjectsPage from "./pages/ProjectsPage";
-// import ClientsPage from "./pages/ClientsPage";
+import { useEffect, useRef, useState } from "react";
 
 function App() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -39,12 +37,10 @@ function App() {
       )}
       <HomePage />
       <SecondPage />
-      {/* <ServicesPage /> */}
-      {/* <ProjectsPage />
-      <ClientsPage /> */}
       <Parallax />
       <TeamPage ref={teamRef} />
       <ContactPage ref={contactRef} />
+      <Footer />
     </>
   );
 }
