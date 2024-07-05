@@ -1,5 +1,6 @@
 import { forwardRef, RefObject } from "react";
 import Logo from "../assets/Logo.png";
+import SlideTabs from "./SlideTabs";
 
 type Props = {
   isVisible: boolean;
@@ -19,46 +20,7 @@ const Navbar = forwardRef<HTMLDivElement, Props>(
             <div className="flex flex-1 items-center ">
               <img src={Logo} style={{ height: "45px" }} />
             </div>
-            <ul className="flex flex-1 items-center justify-end gap-3">
-              <li>
-                <button
-                  onClick={() => {
-                    if (
-                      contactRef &&
-                      "current" in contactRef &&
-                      contactRef.current
-                    ) {
-                      contactRef.current.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                  type="button"
-                  className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 "
-                >
-                  Contact Us
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    if (ref && "current" in ref && ref.current) {
-                      ref.current.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
-                  type="button"
-                  className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 "
-                >
-                  Team
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 "
-                >
-                  Contact Us
-                </button>
-              </li>
-            </ul>
+            <SlideTabs contactRef={contactRef} ref={ref} />
           </div>
         </div>
       </header>

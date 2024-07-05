@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import SecondPage from "./pages/SecondPage";
 import TeamPage from "./pages/TeamPage";
 import ContactPage from "./pages/ContactPage";
+import Parallax from "./components/Parallax";
 
 // import ServicesPage from "./pages/Services";
 // import ProjectsPage from "./pages/ProjectsPage";
@@ -41,6 +42,7 @@ function App() {
       {/* <ServicesPage /> */}
       {/* <ProjectsPage />
       <ClientsPage /> */}
+      <Parallax />
       <TeamPage ref={teamRef} />
       <ContactPage ref={contactRef} />
     </>
