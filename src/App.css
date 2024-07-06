@@ -1,3 +1,23 @@
 .pb-15 {
   padding-bottom: 58px;
 }
+input {
+  border: none;
+  outline: none;
+  border-radius: 0.8rem !important;
+  height: 2.5rem;
+}
+
+input[type="radio"] {
+  /* border: none; */
+  /* text-decoration: none; */
+  opacity: 0;
+  height: 2.5rem;
+  width: 0;
+}
+textarea {
+  height: 100px;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem !important;
+}

@@ -7,8 +7,9 @@ import { forwardRef } from "react";
 const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <div
-      className="w-full h-screen bg-zinc-900 flex flex-col md:flex-row gap-4 p-4"
+      className="w-full  h-max  md:h-screen  bg-zinc-900 flex flex-col md:flex-row gap-4 p-4"
       ref={ref}
+      style={{minHeight:"max-height !Important"}}
     >
       <div className="flex-2 bg-zinc-800 p-4 text-white text-center flex flex-col justify-center items-start">
         <div className="text-4xl md:text-6xl font-black tracking-tighter text-zinc-100 max-w-full">
