@@ -5,10 +5,11 @@ import SlideTabs from "./SlideTabs";
 type Props = {
   isVisible: boolean;
   contactRef: RefObject<HTMLDivElement>;
+  serviceRef: RefObject<HTMLDivElement>;
 };
 
 const Navbar = forwardRef<HTMLDivElement, Props>(
-  ({ isVisible, contactRef }, ref) => {
+  ({ isVisible, contactRef, serviceRef }, ref) => {
     return (
       <header
         className={`fixed top-2 z-30 w-full md:top-6 ${
@@ -20,7 +21,11 @@ const Navbar = forwardRef<HTMLDivElement, Props>(
             <div className="flex flex-1 items-center ">
               <img src={Logo} style={{ height: "45px" }} />
             </div>
-            <SlideTabs contactRef={contactRef} ref={ref} />
+            <SlideTabs
+              contactRef={contactRef}
+              ref={ref}
+              serviceRef={serviceRef}
+            />
           </div>
         </div>
       </header>
