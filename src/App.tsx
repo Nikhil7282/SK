@@ -9,11 +9,13 @@ import Parallax from "./components/Parallax";
 import Footer from "./components/Footer";
 
 import { useEffect, useRef, useState } from "react";
+import Services from "./pages/Services";
 
 function App() {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const teamRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const serviceRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -33,11 +35,17 @@ function App() {
   return (
     <>
       {isVisible && (
-        <Navbar isVisible={isVisible} ref={teamRef} contactRef={contactRef} />
+        <Navbar
+          isVisible={isVisible}
+          ref={teamRef}
+          contactRef={contactRef}
+          serviceRef={serviceRef}
+        />
       )}
       <HomePage />
       <SecondPage />
       <Parallax />
+      <Services ref={serviceRef} />
       <TeamPage ref={teamRef} />
       <ContactPage ref={contactRef} />
       <Footer />
