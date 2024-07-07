@@ -1,3 +1,4 @@
+import { useGlobal } from "../context/GlobalContext";
 import Reveal from "./Reveal";
 
 type Props = {
@@ -5,11 +6,12 @@ type Props = {
   description: String;
 };
 function ServiceCard({ title, description }: Props) {
+  const global = useGlobal();
   return (
     <div className="w-full px-12 h-80 border py-10 rounded-lg shadow-shadowOne flex items-center bg-gradient-to-r from-bodyColor to-[#202327] group hover:bg-gradient-to-b hover:from-black hover:to-[#1e2024] transition-colors duration-100 group">
       <div className="h-72 overflow-y-hidden">
         <div className="flex h-full flex-col gap-10 translate-y-16 md:group-hover:translate-y-0 transition-transform duration-500">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 group">
             <Reveal>
               <h2 className="text-xl md:text-2xl font-titleFont font-bold text-gray-300">
                 {title}
@@ -18,8 +20,21 @@ function ServiceCard({ title, description }: Props) {
             <p className="base mix-blend-difference text-white">
               {description}
             </p>
-            <div className="w-56 flex rounded border-b-2 border-grey-dark overflow-hidden bg-zinc-800">
-              <button className="w-full block text-white text-sm shadow-border bg-blue hover:bg-blue-dark text-sm py-3 px-2 font-sans tracking-wide uppercase font-bold">
+            <div className="w-56 flex rounded border-b-2 border-grey-dark overflow-hidden bg-zinc-800 show-button ">
+              <button
+                className="w-full block text-white text-sm shadow-border bg-blue hover:bg-blue-dark text-sm py-3 px-2 font-sans tracking-wide uppercase font-bold"
+                onClick={() => {
+                  if (
+                    global?.contactRef &&
+                    "current" in global?.contactRef &&
+                    global?.contactRef.current
+                  ) {
+                    global?.contactRef.current.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }
+                }}
+              >
                 contact us
               </button>
               <div className="shadow-border p-3">
