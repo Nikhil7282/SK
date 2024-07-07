@@ -2,13 +2,14 @@ import Reveal from "../components/Reveal";
 import { FaHome, FaPhoneAlt, FaRegClock } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import Form from "../components/Form";
-import { forwardRef } from "react";
+import { useGlobal } from "../context/GlobalContext";
 
-const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
+const ContactPage = () => {
+  const global = useGlobal();
   return (
     <div
       className="w-full h-screen bg-zinc-900 flex flex-col md:flex-row gap-4 p-4"
-      ref={ref}
+      ref={global?.contactRef}
     >
       <div className="flex-2 bg-zinc-800 p-4 text-white text-center flex flex-col justify-center items-start">
         <div className="text-4xl md:text-6xl font-black tracking-tighter text-zinc-100 max-w-full">
@@ -50,6 +51,6 @@ const ContactPage = forwardRef<HTMLDivElement>((props, ref) => {
       </div>
     </div>
   );
-});
+};
 
 export default ContactPage;

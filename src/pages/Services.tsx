@@ -1,13 +1,14 @@
-import { forwardRef } from "react";
 import ServiceCard from "../components/ServiceCard";
-import serviceData from "../Constants/ServiceData";
+import { useGlobal } from "../context/GlobalContext";
+import { serviceData } from "../libs/data";
 
-const Services = forwardRef<HTMLDivElement>((props, ref) => {
+const Services = () => {
+  const global = useGlobal();
   return (
     <section
       id="features"
       className="w-full h-auto py-20 border-b-[1px] bg-zinc-900 px-5"
-      ref={ref}
+      ref={global?.serviceRef}
     >
       <div className="flex flex-col gap-4 font-titleFont mb-14">
         <h3 className="text-sm uppercase font-light text-designColor tracking-wide text-zinc-300">
@@ -32,6 +33,6 @@ const Services = forwardRef<HTMLDivElement>((props, ref) => {
       </div>
     </section>
   );
-});
+};
 
 export default Services;
