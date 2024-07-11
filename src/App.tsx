@@ -35,8 +35,8 @@ function App() {
     <>
       {global?.navbarVisibility && <Navbar />}
       <HomePage />
-      <SecondPage />
       <Parallax />
+      <SecondPage />
       <Projects />
       <Services />
       <TeamPage />

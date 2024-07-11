@@ -2,7 +2,8 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import ParallaxBackGround from "../assets/ParallaxBackground.jpg";
-import ParallaxBottom from "../assets/PrallaxBottom.png";
+import ParallaxBottom from "../assets/ParallaxBottom.png";
+import Reveal from "./Reveal";
 
 function Parallax() {
   const ref = useRef(null);
@@ -16,15 +17,29 @@ function Parallax() {
   return (
     <div
       ref={ref}
-      className="w-full h-screen overflow-hidden relative grid place-items-center"
+      className="w-full h-screen overflow-hidden relative grid place-items-start justify-center"
     >
-      <motion.h1
+      <motion.div
         style={{ y: textY }}
-        className="font-bold text-zinc-900 text-6xl relative z-10"
+        className="font-bold text-zinc-900 relative z-30 p-5 flex flex-col justify-center items-center"
       >
         {" "}
-        Parallax
-      </motion.h1>
+        <Reveal>
+          <div className="text-4xl p-5">
+            If you can Imagine it, We can build it
+          </div>
+        </Reveal>
+        <a href="#" className="text_2">
+          <div id="button_p" className="ac_btn btn w-fit">
+            <Reveal>
+              <>Contact Us</>
+            </Reveal>
+            <div className="ring one"></div>
+            <div className="ring two"></div>
+            <div className="ring three"></div>
+          </div>
+        </a>
+      </motion.div>
       <motion.div
         className="absolute inset-0 z-0"
         style={{
