@@ -6,7 +6,7 @@ const Navbar = () => {
   const global = useGlobal();
   return (
     <header
-      className={`fixed top-2 z-30 w-full md:top-6 ${
+      className={`fixed top-2 z-40 w-full md:top-6 ${
         global?.navbarVisibility ? "opacity-100" : "opacity-0"
       } transition-opacity duration-300`}
     >
