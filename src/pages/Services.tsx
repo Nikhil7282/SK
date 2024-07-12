@@ -19,7 +19,7 @@ const Services = () => {
         </h1>
       </div>
       <div
-        className="grid grid-cols-1 mt-10 md:grid-cols-2 xl:grid-cols-3 gap-6 bg-zinc-500
+        className="grid grid-cols-1 mt-10 md:grid-cols-2 xl:grid-cols-3 gap-6 
             xl:gap-20 px-5 py-5"
       >
         {serviceData.map((service) => {

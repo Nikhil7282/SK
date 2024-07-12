@@ -3,7 +3,7 @@ import Reveal from "../components/Reveal";
 export default function SecondPage() {
   return (
     <div className="w-full h-screen  bg-zinc-900 flex flex-col md:flex-row gap-4 p-4">
-      <div className="flex-1 bg-zinc-800 p-4 text-white text-center">
+      <div className="flex-1 bg-zinc-800 p-4 text-white text-center ">
         <Reveal>
           <div className="text-4xl md:text-7xl font-black tracking-tighter text-zinc-100 max-w-full">
             Building Dreams, One Project at a Time{" "}

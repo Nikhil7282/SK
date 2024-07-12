@@ -8,7 +8,7 @@ const ContactPage = () => {
   const global = useGlobal();
   return (
     <div
-      className="w-full h-screen bg-zinc-900 flex flex-col md:flex-row gap-4 p-4"
+      className="w-full  min-h-max   bg-zinc-900 flex flex-col md:flex-row gap-4 p-4"
       ref={global?.contactRef}
     >
       <div className="flex-2 bg-zinc-800 p-4 text-white text-center flex flex-col justify-center items-start">

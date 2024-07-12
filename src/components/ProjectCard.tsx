@@ -31,7 +31,7 @@ export default function ProjectCard({
       <a href="#" target="_blank">
         <section
           className={
-            "max-w-[52rem] border rounded-lg overflow-hidden relative sm:h-[20rem] transition hover:bg-zinc-400  dark:hover:bg-darkOcean"
+            "max-w-[52rem] border rounded-lg overflow-hidden relative sm:h-[20rem] transition hover:bg-zinc-100  dark:hover:bg-darkOcean"
           }
         >
           <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem] text-black">

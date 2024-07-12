@@ -25,7 +25,7 @@ function Parallax() {
       >
         {" "}
         <Reveal>
-          <div className="text-4xl p-5">
+          <div className="text-4xl p-5 text-white">
             If you can Imagine it, We can build it
           </div>
         </Reveal>

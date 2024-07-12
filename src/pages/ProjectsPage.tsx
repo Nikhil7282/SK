@@ -15,7 +15,7 @@ export default function Projects() {
     >
       <div className="flex flex-col gap-4 font-titleFont mb-14">
         <Reveal>
-          <h3 className="text-sm uppercase font-light text-designColor tracking-wide text-zinc-300">
+          <h3 className="text-sm uppercase font-light text-designColor tracking-wide text-zinc-900">
             What We Did
           </h3>
         </Reveal>

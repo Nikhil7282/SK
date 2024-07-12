@@ -14,13 +14,13 @@ export default function HomePage() {
             <>Building dreams, one project at a time.</>
           </Reveal>
         </div>
-        <div className="self-start p-5 md:p-6 mt-10 lg:mt-16 font-bold text-center bg-white rounded-xl text-stone-950">
+        <div className="self-start p-5 md:p-6 mt-10 lg:mt-16 font-bold text-center bg-white rounded-xl text-stone-950 ml-auto mr-auto cursor-pointer">
           <Reveal>
             <>Contact Us</>
           </Reveal>
         </div>
       </div>
-      <div className="flex-1 bg-zinc-500 p-4 text-white text-center">
+      <div className="flex-1 bg-zinc-100 p-4  text-center">
         <Reveal>
           <>ILLUSTRATION ACTIVE PART</>
         </Reveal>
