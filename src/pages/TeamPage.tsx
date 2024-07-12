@@ -1,12 +1,14 @@
 import Photo from "../assets/Photo.png";
 import { FaGraduationCap, FaPeopleCarry } from "react-icons/fa";
 import { AiFillVideoCamera } from "react-icons/ai";
-import { forwardRef } from "react";
 import Reveal from "../components/Reveal";
+import { useGlobal } from "../context/GlobalContext";
 
-const TeamPage = forwardRef<HTMLDivElement>((props, ref) => {
+const TeamPage = () => {
+  const global = useGlobal();
+
   return (
-    <section className="w-full bg-white p-5" ref={ref}>
+    <section className="w-full bg-white p-5" ref={global?.teamRef}>
       <div className="md:max-w-[1100px] m-auto grid md:grid-cols-2 max-w-[400px]">
         <div className="justify-center items-center">
           <Reveal>
@@ -75,6 +77,6 @@ const TeamPage = forwardRef<HTMLDivElement>((props, ref) => {
       </div>
     </section>
   );
-});
+};
 
 export default TeamPage;

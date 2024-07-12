@@ -110,9 +110,9 @@ const Form: React.FC = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative ">
       {isSuccess && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white rounded-lg shadow-lg z-50 transition-all">
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white rounded-lg shadow-lg z-50 transition-all ">
           <div className="flex flex-col">
             <div className="flex flex-row gap-2 items-center">
               <svg
@@ -156,7 +156,7 @@ const Form: React.FC = () => {
               </Reveal>
               <Reveal width="100%">
                 <input
-                  className={`rounded-lg border w-full ${
+                  className={`rounded-lg border h-12 w-full ${
                     errors.firstName
                       ? "border-red-500"
                       : "border-neutral-grey-500"
@@ -183,7 +183,7 @@ const Form: React.FC = () => {
               </Reveal>
               <Reveal width="100%">
                 <input
-                  className={`rounded-lg border w-full ${
+                  className={`rounded-lg border h-12 w-full ${
                     errors.lastName
                       ? "border-red-500"
                       : "border-neutral-grey-500"
@@ -211,7 +211,7 @@ const Form: React.FC = () => {
             </Reveal>
             <Reveal width="100%">
               <input
-                className={`rounded-lg border w-full ${
+                className={`rounded-lg border h-12 w-full ${
                   errors.email ? "border-red-500" : "border-neutral-grey-500"
                 }`}
                 type="email"
@@ -225,63 +225,7 @@ const Form: React.FC = () => {
               <p className= "absolute top-full text-red-500 text-sm">{errors.email}</p>
             )}
           </div>
-          <div className="flex flex-col items-left w-full">
-            <Reveal width="100%">
-              <span className="flex items-center">
-                <span className="text-sm text-neutral-grey-700 py-2">
-                  Query Type
-                </span>
-                <span className="text-neutral ml-1">*</span>
-              </span>
-            </Reveal>
-            <div className="relative flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
-              <label
-                className={`rounded-lg border w-full md:w-1/2 hover:cursor-pointer flex items-center justify-center ${
-                  errors.contactType
-                    ? "border-red-500"
-                    : "border-neutral-grey-500"
-                } ${
-                  formData.contactType === "General Enquiry"
-                    ? "bg-zinc-700"
-                    : ""
-                }`}
-              >
-                <input
-                  className="mx-3"
-                  type="radio"
-                  name="contactType"
-                  value="General Enquiry"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-                General Enquiry
-              </label>
-              <label
-                className={`rounded-lg border w-full md:w-1/2 hover:cursor-pointer flex items-center justify-center ${
-                  errors.contactType
-                    ? "border-red-500"
-                    : "border-neutral-grey-500"
-                } ${
-                  formData.contactType === "Support Request"
-                    ? "bg-zinc-700"
-                    : ""
-                }`}
-              >
-                <input
-                  className="mx-3"
-                  type="radio"
-                  name="contactType"
-                  value="Support Request"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-                Support Request
-              </label>
-            </div>
-            {errors.contactType && (
-              <p className="text-red-500 text-sm absolute bottom-0">{errors.contactType}</p>
-            )}
-          </div>
+        
           <div className="relative flex flex-col items-left w-full">
             <Reveal width="100%">
               <span className="flex items-center">
@@ -293,7 +237,7 @@ const Form: React.FC = () => {
             </Reveal>
             <Reveal width="100%">
               <textarea
-                className={`rounded-lg border w-full ${
+                className={`rounded-lg border h-36 w-full ${
                   errors.message ? "border-red-500" : "border-neutral-grey-500"
                 }`}
                 name="message"

@@ -10,18 +10,17 @@ import Footer from "./components/Footer";
 
 import { useEffect, useRef, useState } from "react";
 import Services from "./pages/Services";
+import Projects from "./pages/ProjectsPage";
+import { useGlobal } from "./context/GlobalContext";
 
 function App() {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  const teamRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-  const serviceRef = useRef<HTMLDivElement>(null);
+  const global = useGlobal();
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
-      setIsVisible(true);
+      global?.setNavbarVisibility(true);
     } else {
-      setIsVisible(false);
+      global?.setNavbarVisibility(false);
     }
   };
 
@@ -34,20 +33,14 @@ function App() {
 
   return (
     <>
-      {isVisible && (
-        <Navbar
-          isVisible={isVisible}
-          ref={teamRef}
-          contactRef={contactRef}
-          serviceRef={serviceRef}
-        />
-      )}
+      {global?.navbarVisibility && <Navbar />}
       <HomePage />
-      <SecondPage />
       <Parallax />
-      <Services ref={serviceRef} />
-      <TeamPage ref={teamRef} />
-      <ContactPage ref={contactRef} />
+      {/* <SecondPage /> */}
+      <Projects />
+      <Services />
+      <TeamPage />
+      <ContactPage />
       <Footer />
     </>
   );
