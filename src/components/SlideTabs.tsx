@@ -13,7 +13,10 @@ const SlideTabs = () => {
 
   return (
     <ul
-      className="flex flex-1 items-center justify-end gap-3"
+      className={`flex flex-1 items-center justify-end gap-3 ${
+        global?.isMenuOpen &&
+        "flex-col bg-white/90 backdrop-blur-sm gap-5 p-3 rounded-2xl"
+      }`}
       onMouseLeave={() => setPosition({ ...position, opacity: 0 })}
     >
       <Tabs
@@ -72,7 +75,7 @@ const SlideTabs = () => {
       >
         Contact Us
       </Tabs>
-      <HoverCursor position={position} />
+      {!global?.isMenuOpen && <HoverCursor position={position} />}
     </ul>
   );
 };
