@@ -2,63 +2,55 @@ import Logo from "../assets/Logo.png";
 
 function Footer() {
   return (
-    <footer className="text-gray-200 body-font bg-zinc-800">
+    <footer className="body-fon text-black">
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <img src={Logo} style={{ height: "45px" }} />
 
-            <span className="ml-3 text-xl font-bold text-gray-100">
-              SK Association
-            </span>
+            <span className="ml-3 text-xl font-bold ">SK Association</span>
           </a>
-          <p className="mt-2 text-sm text-gray-200 xl:ml-5">
-            "From Blueprint to Reality"{" "}
-          </p>
+          <p className="mt-2 text-sm xl:ml-5">"From Blueprint to Reality" </p>
         </div>
         <div className="flex-grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-bold text-gray-100 tracking-widest text-sm mb-3">
+            <h2 className="title-font font-bold tracking-widest text-sm mb-3">
               Address
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-gray-200 hover:text-gray-800 flex ">
-                  10/123,Ozhalapathy
-                </a>
+                <a className=" hover:text-gray-800 flex ">10/123,Ozhalapathy</a>
               </li>
               <li>
-                <a className="text-gray-200 hover:text-gray-800">
-                  chittur taluk
-                </a>
+                <a className=" hover:text-gray-800">chittur taluk</a>
               </li>
               <li>
-                <a className="text-gray-200 hover:text-gray-800">Palakkad</a>
+                <a className=" hover:text-gray-800">Palakkad</a>
               </li>
               <li>
-                <a className="text-gray-200 hover:text-gray-800">678557</a>
+                <a className=" hover:text-gray-800">678557</a>
               </li>
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-bold text-gray-100 tracking-widest text-sm mb-3">
+            <h2 className="title-font font-bold tracking-widest text-sm mb-3">
               CATEGORIES
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-gray-200 hover:text-gray-800">Home</a>
+                <a className=" hover:text-gray-800">Home</a>
               </li>
               <li>
-                <a className="text-gray-200 hover:text-gray-800">Services</a>
+                <a className=" hover:text-gray-800">Services</a>
               </li>
               <li>
-                <a className="text-gray-200 hover:text-gray-800">Our Work</a>
+                <a className=" hover:text-gray-800">Our Work</a>
               </li>
               <li>
-                <a className="text-gray-200 hover:text-gray-800">About us</a>
+                <a className=" hover:text-gray-800">About us</a>
               </li>
               <li>
-                <a className="text-gray-200 hover:text-gray-800">Contact Us</a>
+                <a className=" hover:text-gray-800">Contact Us</a>
               </li>
             </nav>
           </div>
@@ -71,7 +63,7 @@ function Footer() {
             <a
               href="#"
               rel="noopener noreferrer"
-              className="text-gray-200 ml-1"
+              className=" ml-1"
               target="_blank"
             >
               @Sheeni

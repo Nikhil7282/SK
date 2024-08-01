@@ -9,8 +9,8 @@ const TeamPage = () => {
 
   return (
     <section className="w-full bg-white p-5" ref={global?.teamRef}>
-      <div className="md:max-w-[1100px] m-auto grid md:grid-cols-2 max-w-[400px]">
-        <div className="justify-center items-center">
+      <div className="md:max-w-[1000px] m-auto grid md:grid-cols-2 max-w-[350px]">
+        <div className="justify-center items-center mx-10">
           <Reveal>
             <img
               src={Photo}
