@@ -1,8 +1,14 @@
 import Reveal from "../components/Reveal";
+import { useGlobal } from "../context/GlobalContext";
 
 export default function HomePage() {
+  const global = useGlobal();
+
   return (
-    <div className="w-full h-screen bg-zinc-900 flex flex-col md:flex-row gap-4 p-4">
+    <div
+      className="w-full h-screen bg-zinc-900 flex flex-col md:flex-row gap-4 p-4"
+      ref={global?.homeRef}
+    >
       <div className="flex-1 bg-zinc-800 p-4 text-white text-center flex flex-col items-center justify-center">
         <div className="text-4xl md:text-7xl font-black tracking-tighter text-zinc-100 max-w-full">
           <Reveal>

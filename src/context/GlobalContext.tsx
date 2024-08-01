@@ -18,6 +18,7 @@ export type GlobalValues = {
   contactRef: RefObject<HTMLDivElement>;
   serviceRef: RefObject<HTMLDivElement>;
   projectRef: RefObject<HTMLDivElement>;
+  homeRef: RefObject<HTMLDivElement>;
 };
 export const globalContext = createContext<GlobalValues | null>(null);
 
@@ -25,6 +26,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
   const [navbarVisibility, setNavbarVisibility] = useState<boolean>(false);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
+  const homeRef = useRef<HTMLDivElement>(null);
   const teamRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const serviceRef = useRef<HTMLDivElement>(null);
@@ -39,6 +41,7 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
     contactRef,
     serviceRef,
     projectRef,
+    homeRef,
   };
   return (
     <globalContext.Provider value={value}>{children}</globalContext.Provider>

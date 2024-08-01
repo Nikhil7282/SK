@@ -8,7 +8,7 @@ import ContactPage from "./pages/ContactPage";
 import Parallax from "./components/Parallax";
 import Footer from "./components/Footer";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import Services from "./pages/Services";
 import Projects from "./pages/ProjectsPage";
 import { useGlobal } from "./context/GlobalContext";
@@ -34,7 +34,7 @@ function App() {
   return (
     <>
       {global?.navbarVisibility && <Navbar />}
-      <HomePage />
+      {/* <HomePage /> */}
       <Parallax />
       {/* <SecondPage /> */}
       <Projects />

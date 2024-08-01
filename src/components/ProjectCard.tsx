@@ -42,7 +42,7 @@ export default function ProjectCard({
             <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
               {tags.map((tag, index) => (
                 <li
-                  className="dark:bg-[#ddbea9] dark:text-black bg-[#ffcbb4] px-3 py-1 text-[0.7rem] uppercase tracking-wider rounded-full"
+                  className="text-black bg-[#ffcbb4] px-3 py-1 text-[0.7rem] uppercase tracking-wider rounded-full"
                   key={index}
                 >
                   {tag}

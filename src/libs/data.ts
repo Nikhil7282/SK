@@ -1,5 +1,11 @@
 import ProjectImage from "../assets/ProjectImages/react-food.png";
 
+import Project1 from "../assets/ProjectImages/Project-1.jpg";
+import Project2 from "../assets/ProjectImages/Project-2.jpg";
+import Project3 from "../assets/ProjectImages/Project-3.jpg";
+import Project4 from "../assets/ProjectImages/Project-4.jpg";
+import Project5 from "../assets/ProjectImages/Project-5.jpg";
+
 export const serviceData: { title: string; description: String }[] = [
   {
     title: "Construction Services",
@@ -41,7 +47,7 @@ export const projectData = [
       "SCRUM Methodology",
       "End-to-End Development",
     ],
-    imageUrl: ProjectImage,
+    imageUrl: Project1,
   },
   {
     title: "Title",
@@ -55,7 +61,7 @@ export const projectData = [
       "SCRUM Methodology",
       "End-to-End Development",
     ],
-    imageUrl: ProjectImage,
+    imageUrl: Project2,
   },
   {
     title: "Title",
@@ -69,7 +75,7 @@ export const projectData = [
       "SCRUM Methodology",
       "End-to-End Development",
     ],
-    imageUrl: ProjectImage,
+    imageUrl: Project3,
   },
   {
     title: "Title",
@@ -83,7 +89,7 @@ export const projectData = [
       "SCRUM Methodology",
       "End-to-End Development",
     ],
-    imageUrl: ProjectImage,
+    imageUrl: Project4,
   },
   {
     title: "Title",
@@ -97,6 +103,6 @@ export const projectData = [
       "SCRUM Methodology",
       "End-to-End Development",
     ],
-    imageUrl: ProjectImage,
+    imageUrl: Project5,
   },
 ];

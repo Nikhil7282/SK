@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import Reveal from "./Reveal";
 
 interface FormData {
-  firstName: string;
+  name: string;
   lastName: string;
   email: string;
   contactType: string;
@@ -13,7 +13,7 @@ interface FormData {
 
 const Form: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
-    firstName: "",
+    name: "",
     lastName: "",
     email: "",
     contactType: "",
@@ -49,7 +49,7 @@ const Form: React.FC = () => {
     const { name, value } = e.target;
 
     const schema = Yup.object().shape({
-      firstName: Yup.string().required("This field is required"),
+      name: Yup.string().required("This field is required"),
       lastName: Yup.string().required("This field is required"),
       email: Yup.string()
         .email()
@@ -77,7 +77,7 @@ const Form: React.FC = () => {
     e.preventDefault();
 
     const schema = Yup.object().shape({
-      firstName: Yup.string().required("This field is required"),
+      Name: Yup.string().required("This field is required"),
       lastName: Yup.string().required("This field is required"),
       email: Yup.string()
         .email()
@@ -94,6 +94,7 @@ const Form: React.FC = () => {
       await schema.validate(formData, { abortEarly: false });
       console.log("Form Validation:", formData);
       setIsSuccess(true);
+
       setTimeout(() => {
         setIsSuccess(false);
       }, 3000);
@@ -112,7 +113,7 @@ const Form: React.FC = () => {
   return (
     <div className="relative ">
       {isSuccess && (
-        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white rounded-lg shadow-lg z-50 transition-all ">
+        <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-zinc-800 text-white rounded-lg shadow-lg z-50 transition-all p-5">
           <div className="flex flex-col">
             <div className="flex flex-row gap-2 items-center">
               <svg
@@ -143,64 +144,40 @@ const Form: React.FC = () => {
             Contact Us
           </h1>
         </Reveal>
-        <form className="flex flex-col space-y-4 mt-6" onSubmit={handleSubmit}>
+        <form
+          className="flex flex-col space-y-4 mt-6 text-black"
+          onSubmit={handleSubmit}
+        >
           <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
             <div className="relative flex flex-col items-left w-full">
               <Reveal width="100%">
                 <span className="flex items-center">
                   <span className="text-sm text-neutral-grey-700 py-2">
-                    First Name
+                    Name
                   </span>
                   <span className="text-neutral ml-1">*</span>
                 </span>
               </Reveal>
               <Reveal width="100%">
                 <input
-                  className={`rounded-lg border h-12 w-full ${
-                    errors.firstName
-                      ? "border-red-500"
-                      : "border-neutral-grey-500"
+                  className={`rounded-lg border h-12 w-full focus:outline-none ${
+                    errors.name ? "border-red-500" : "border-neutral-grey-500"
                   }`}
                   type="text"
-                  name="firstName"
-                  value={formData.firstName}
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
                   onBlur={handleBlur}
                 />
               </Reveal>
-              {errors.firstName && (
-                <p className="absolute top-full text-red-500 text-sm">{errors.firstName}</p>
-              )}
-            </div>
-            <div className="relative flex flex-col items-left w-full">
-              <Reveal width="100%">
-                <span className="flex items-center">
-                  <span className="text-sm text-neutral-grey-700 py-2">
-                    Last Name
-                  </span>
-                  <span className="text-neutral ml-1">*</span>
-                </span>
-              </Reveal>
-              <Reveal width="100%">
-                <input
-                  className={`rounded-lg border h-12 w-full ${
-                    errors.lastName
-                      ? "border-red-500"
-                      : "border-neutral-grey-500"
-                  }`}
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              </Reveal>
-              {errors.lastName && (
-                <p className="absolute top-full text-red-500 text-sm">{errors.lastName}</p>
+              {errors.name && (
+                <p className="absolute top-full text-red-500 text-sm">
+                  {errors.name}
+                </p>
               )}
             </div>
           </div>
-          <div className= "relative flex flex-col items-left w-full">
+          <div className="relative flex flex-col items-left w-full">
             <Reveal width="100%">
               <span className="flex items-center">
                 <span className="text-sm text-neutral-grey-700 py-2">
@@ -211,7 +188,7 @@ const Form: React.FC = () => {
             </Reveal>
             <Reveal width="100%">
               <input
-                className={`rounded-lg border h-12 w-full ${
+                className={`rounded-lg border h-12 w-full focus:outline-none ${
                   errors.email ? "border-red-500" : "border-neutral-grey-500"
                 }`}
                 type="email"
@@ -222,10 +199,12 @@ const Form: React.FC = () => {
               />
             </Reveal>
             {errors.email && (
-              <p className= "absolute top-full text-red-500 text-sm">{errors.email}</p>
+              <p className="absolute top-full text-red-500 text-sm">
+                {errors.email}
+              </p>
             )}
           </div>
-        
+
           <div className="relative flex flex-col items-left w-full">
             <Reveal width="100%">
               <span className="flex items-center">
@@ -237,7 +216,7 @@ const Form: React.FC = () => {
             </Reveal>
             <Reveal width="100%">
               <textarea
-                className={`rounded-lg border h-36 w-full ${
+                className={`rounded-lg border h-36 w-full focus:outline-none ${
                   errors.message ? "border-red-500" : "border-neutral-grey-500"
                 }`}
                 name="message"
@@ -247,25 +226,9 @@ const Form: React.FC = () => {
               ></textarea>
             </Reveal>
             {errors.message && (
-              <p className="absolute top-full text-red-500 text-sm">{errors.message}</p>
-            )}
-          </div>
-          <div className="flex flex-col items-left w-full">
-            <label className="flex items-center space-x-2 py-4">
-              <input
-                className="mr-2"
-                type="checkbox"
-                name="consent"
-                checked={formData.consent}
-                onChange={handleChange}
-              />
-              <span className="text-primary-green-600 font-medium">
-                I consent to being contacted by you
-              </span>
-              <span className="text-neutral ml-1">*</span>
-            </label>
-            {errors.consent && (
-              <p className="text-red-500 text-sm">{errors.consent}</p>
+              <p className="absolute top-full text-red-500 text-sm">
+                {errors.message}
+              </p>
             )}
           </div>
           <Reveal width="100%">

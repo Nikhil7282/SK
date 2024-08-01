@@ -1,8 +1,9 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-import ParallaxBackGround from "../assets/ParallaxBackground.jpg";
-import ParallaxBottom from "../assets/ParallaxBottom.png";
+import newParallaxBackGround from "../assets/new-parallax-background-main.jpg";
+import newParallaxBottom from "../assets/new-parallax-background.png";
+
 import Reveal from "./Reveal";
 
 function Parallax() {
@@ -43,7 +44,9 @@ function Parallax() {
       <motion.div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${ParallaxBackGround})`,
+          // backgroundImage: `url(${ParallaxBackGround})`,
+          backgroundImage: `url(${newParallaxBackGround})`,
+
           backgroundPosition: "bottom",
           backgroundSize: "cover",
           y: backgroundY,
@@ -52,7 +55,9 @@ function Parallax() {
       <motion.div
         className="absolute inset-0 z-20"
         style={{
-          backgroundImage: `url(${ParallaxBottom})`,
+          // backgroundImage: `url(${ParallaxBottom})`,
+          backgroundImage: `url(${newParallaxBottom})`,
+
           backgroundPosition: "bottom",
           backgroundSize: "cover",
         }}
