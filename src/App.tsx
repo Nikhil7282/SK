@@ -1,17 +1,15 @@
 import "./App.css";
 
-import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
-import SecondPage from "./pages/SecondPage";
 import TeamPage from "./pages/TeamPage";
 import ContactPage from "./pages/ContactPage";
-import Parallax from "./components/Parallax";
 import Footer from "./components/Footer";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import Services from "./pages/Services";
 import Projects from "./pages/ProjectsPage";
 import { useGlobal } from "./context/GlobalContext";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const global = useGlobal();
@@ -35,8 +33,6 @@ function App() {
     <>
       {global?.navbarVisibility && <Navbar />}
       <HomePage />
-      <Parallax />
-      {/* <SecondPage /> */}
       <Projects />
       <Services />
       <TeamPage />

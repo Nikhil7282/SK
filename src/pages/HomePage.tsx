@@ -1,29 +1,24 @@
-import Reveal from "../components/Reveal";
+import HomeBg from "../assets/Home/HomeBG.png";
+import TextReveal from "../components/animations/TextReveal";
 
 export default function HomePage() {
   return (
-    <div className="w-full h-screen bg-zinc-900 flex flex-col md:flex-row gap-4 p-4">
-      <div className="flex-1 bg-zinc-800 p-4 text-white text-center flex flex-col items-center justify-center">
-        <div className="text-4xl md:text-7xl font-black tracking-tighter text-zinc-100 max-w-full">
-          <Reveal>
-            <>Welcome to our Construction Company</>
-          </Reveal>
+    <div
+      className="w-screen h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url(${HomeBg})` }}
+    >
+      <div className="absolute z-30 top-0 w-full h-full flex items-center justify-center">
+        <div className="flex-1">
+          <div className="text-6xl p-5 home-title text-white font-extrabold">
+            <TextReveal>
+              Constructing more than just buildings, we build
+            </TextReveal>{" "}
+            <span className="text-zinc-500">
+              <TextReveal>relationships.</TextReveal>
+            </span>
+          </div>
         </div>
-        <div className="mt-6 text-white max-w-full">
-          <Reveal>
-            <>Building dreams, one project at a time.</>
-          </Reveal>
-        </div>
-        <div className="self-start p-5 md:p-6 mt-10 lg:mt-16 font-bold text-center bg-white rounded-xl text-stone-950 ml-auto mr-auto cursor-pointer">
-          <Reveal>
-            <>Contact Us</>
-          </Reveal>
-        </div>
-      </div>
-      <div className="flex-1 bg-zinc-100 p-4  text-center">
-        <Reveal>
-          <>ILLUSTRATION ACTIVE PART</>
-        </Reveal>
+        <div className="flex-1"></div>
       </div>
     </div>
   );
