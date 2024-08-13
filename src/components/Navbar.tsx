@@ -1,9 +1,34 @@
 import Logo from "../assets/Logo.png";
 import SlideTabs from "./SlideTabs";
 import { useGlobal } from "../context/GlobalContext";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const global = useGlobal();
+
+  const [navbarVisible, setNavbarVisible] = useState(false);
+  const [scrollTimeout, setScrollTimeout] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setNavbarVisible(true);
+
+      const newTimeout = setTimeout(() => {
+        setNavbarVisible(false);
+      }, 5000);
+
+      setScrollTimeout(newTimeout);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+    };
+  }, [scrollTimeout]);
 
   const toggleMenu = () => {
     global?.setIsMenuOpen(!global.isMenuOpen);
@@ -11,34 +36,17 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-2 z-40 w-full md:top-6 ${
-        global?.navbarVisibility ? "opacity-100" : "opacity-0"
-      } transition-opacity duration-300`}
+      className={`fixed top-2 z-40 w-full md:top-6 ${navbarVisible ? "opacity-100" : "opacity-0"
+        } transition-opacity duration-300`}
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6 backdrop-blur-0">
         <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-sm before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(theme(colors.gray.100),theme(colors.gray.200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
           <div className="flex flex-1 items-center">
-            <img
-              className="cursor:pointer"
-              src={Logo}
-              style={{ height: "45px" }}
-              onClick={() => {
-                if (
-                  global?.homeRef &&
-                  "current" in global?.homeRef &&
-                  global?.homeRef.current
-                ) {
-                  global?.homeRef.current.scrollIntoView({
-                    behavior: "smooth",
-                  });
-                }
-              }}
-            />
           </div>
           <div className="hidden md:flex flex-1">
             <SlideTabs />
           </div>
-          <button className="md:hidden focus:outline-none" onClick={toggleMenu}>
+          <button className="block md:hidden focus:outline-none" onClick={toggleMenu}>
             <svg
               className="w-6 h-6 text-gray-800"
               fill="none"
@@ -57,7 +65,7 @@ const Navbar = () => {
         </div>
       </div>
       {global?.isMenuOpen && (
-        <div className="md:hidden p-5">
+        <div className=" block md:hidden p-5">
           <SlideTabs />
         </div>
       )}
