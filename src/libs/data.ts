@@ -1,5 +1,3 @@
-import ProjectImage from "../assets/ProjectImages/react-food.png";
-
 import Project1 from "../assets/ProjectImages/Project-1.jpg";
 import Project2 from "../assets/ProjectImages/Project-2.jpg";
 import Project3 from "../assets/ProjectImages/Project-3.jpg";
