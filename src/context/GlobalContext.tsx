@@ -23,7 +23,7 @@ export type GlobalValues = {
 export const globalContext = createContext<GlobalValues | null>(null);
 
 export const GlobalProvider = ({ children }: { children: ReactNode }) => {
-  const [navbarVisibility, setNavbarVisibility] = useState<boolean>(false);
+  const [navbarVisibility, setNavbarVisibility] = useState<boolean>(true);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const homeRef = useRef<HTMLDivElement>(null);
